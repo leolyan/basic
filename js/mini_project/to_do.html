@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+    <title>Todo List</title>
+    <style>
+        
+        body{
+            background-image: repeating-linear-gradient(135deg, rgba(4, 229, 71,0.08) 0px, rgba(4, 229, 71,0.08)
+            1px,transparent 1px, transparent 9px),
+            repeating-linear-gradient(45deg, rgba(4, 229, 71,0.08) 0px, rgba(4, 229,
+            71,0.08) 1px,transparent 1px, transparent 9px),
+            linear-gradient(90deg, rgb(77, 18, 84),rgb(52, 161, 185));
+        }
+        .container {
+        margin: 70px auto;
+        width: 350px;
+        height: 600px;
+        background-image: repeating-linear-gradient(45deg, rgba(221, 211, 144,0.12) 0px, rgba(221, 211, 144,0.12) 1px,transparent 1px, transparent 13px),
+        repeating-linear-gradient(135deg, rgba(221, 211, 144,0.12) 0px, rgba(221, 211, 144,0.12) 1px,transparent 1px, transparent 13px),
+        linear-gradient(90deg, rgba(221, 7, 100, 0.849),rgba(58, 28, 99, 0.774));
+        text-align: center;
+        border-radius: 30px;
+        transition: 1s;
+        box-shadow: 5px 10px 8px rgba(15, 15, 15, 0.226);
+        }
+        .title{
+            color: rgb(230, 228, 228);
+            padding-top: 20px;
+            font-weight: bold;
+            font-family: sans-serif;
+        }
+        
+        #input {
+            background: #e7e7e7;
+            border-top: 0;
+            border-bottom: 0;
+            border-left: 5px solid #312f31b9;
+            border-right: 0;
+            padding: 10px;
+            color: black;
+            border-radius: 5px;
+        }
+        input#input:focus {
+            border-left: 5px solid #9b9999;
+            border-right: 0;
+            border-top: 0;
+            border-bottom: 0;
+            color: black;
+            outline: none;
+        }
+        #input::placeholder {
+            color: #a8a8a8c2;
+        }
+        .btn {
+            padding: 10px 15px;
+            border: 0px solid #9b9999;
+            text-transform: unset;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: 1s;
+
+        }
+        .btn-add {
+            border-radius: 5px;
+            color: #00a8f7;
+            background-color: #e7e7e7;
+            cursor: pointer;
+
+        }
+        .btn-add:hover {
+            font-weight: lighter;
+            left: 10px;
+            background-color: #afaeaead;
+        }
+        i{
+            cursor: pointer;
+            margin-right: 5px;
+        }
+        #list {
+            background-color: #fcfcfc;
+            height: 455px;
+            border-radius: 30px;
+            overflow: scroll;
+            padding: 20px 0 0 0;
+            color: #e7e7e7;
+        }
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        .list-item {
+            padding: 10px 15px;
+            margin:0 20px;
+            height: 40px;
+            color: #e7e7e7;
+            list-style: none;
+            clear: both;
+            transition: 1s ease-in-out;
+        }
+        .list-item:hover {
+            border-radius: 10px;
+            background:rgba(255,255,255, 0.3);
+        }
+        #listText {
+            margin-top: 8px;
+            float: left;
+            text-align: left;
+        }
+        #dateText {
+            font-size: 10px;
+            margin: 0;
+            color: #bbb;
+            text-align: left;
+        }
+        #actionBtn{
+            margin-top: 10px;
+            float: right;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h4 class="title"> <u>To Do List</u> </h4>
+
+            <div class="todo">
+                <div class="add-box" id="addBox">
+                    <input type="text" placeholder="Write something..." id="input">
+                    <button id="addBtn" class="btn btn-add" onclick="addList()">Add</button>
+                </div>
+                <ul class="list" id="list">
+                    <ul class="list" id="list">
+
+                    </ul>
+                </ul>
+            </div>
+    </div>
+
+    <script>
+
+        let minTextLength =3;
+        let i=1;
+
+        let inputText = document.getElementById("input");
+        let list = document.getElementById("list");
+
+        function textFilter(x){
+            if(x){
+            
+                if(x.length >= minTextLength){
+                    return x;
+                }else{
+                    alert("Min text length is 3")
+                    return false;
+                }
+            }else{
+                alert("Input text empty")
+                return false;
+            }
+        }
+
+        function showList(text){
+            list.innerHTML +=  `
+            <li class="list-item" id="list${i}">
+                <button class="del-btn" onclick="deleteList(${i})">Delete</button>
+                <button class="edit-btn" onclick="editList(${i})">Edit</button>
+                <span id="listText${i}">${text} </span>
+            </li>
+            `; 
+            i++;
+        }
+
+        function deleteList(listId){
+            let current = document.getElementById(`list${listId}`);
+            let currenttext =document.getElementById(`listText${listId}`).innerHTML;
+            let deleteConfirm =confirm(`Are you sure to delete '${currenttext}'?`);
+
+            if(deleteConfirm){
+                list.removeChild(current);
+            }else{
+                console.log("Delete cancel");
+            }
+        }
+
+        function editList(listId){
+            let current = document.getElementById(`listText${listId}`);
+            let newText = prompt("Something",current.innerHTML);
+
+            if (textFilter(newText)){
+                current.innerHTML = newText;
+            }
+        }
+
+        function addList(){
+            //get
+            let inputText = textFilter(input.value);
+
+            if(inputText){
+                //set
+                showList(inputText);
+                input.value ="";
+            }
+        }
+    </script>
+    
+</body>
+</html>

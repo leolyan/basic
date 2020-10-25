@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>List Design & Menu</title>
+	<style type="text/css">
+		body{
+			background-color: #009688
+		}
+		.test-list{
+			list-style-type: none;
+			padding-left: unset; 
+		}
+		.test-list li{
+			    background: floralwhite;
+			    margin-bottom: 7px;
+			    padding: 5px 10px;
+			    width: 140px;
+			    text-transform: uppercase;
+			    font-family: sans-serif;
+			    border-left: 4px solid darkseagreen;
+			    color: #000;
+			    transition: 0.5s;
+			    border-radius: 0 7px 7px 0;
+		}
+
+		.test-list li:hover{
+			border-left-width: 10px;
+			background-color: #B2DFDB;
+			font-weight: bolder;
+		}
+		.box{
+			width: 170px;
+    		border: 2px solid #fff8f89e;
+    		padding: 10px;
+    		border-radius: 6px;
+		}
+		.box-title{
+			font-family: sans-serif;
+		    text-transform: uppercase;
+		    color: black;
+		    border: 2px solid #f5f5f5b8;
+		    border-radius: 8px;
+		    background: #fafafa;
+		    padding: 3px;
+		}
+		.nav-bar{
+			list-style-type: none;
+			padding: 3px;
+			background-color: #00000085;
+			border-radius: 5px;
+		}
+		.nav-item{
+			display: inline-block;
+		    padding: 10px 10px;
+		    font-family: emoji;
+		    text-transform: uppercase;
+		    transition: 0.8s;
+		    border-radius: 5px;
+
+		}
+
+		.nav-item:hover{
+			background-color: white;
+			font-weight: lighter;
+		}
+		.nav-item.active{
+			background-color: #fff;
+			font-weight: lighter;
+		}
+
+	</style>
+</head>
+<body>
+
+	<nav>
+		<ul class="nav-bar">
+			<li class="nav-item active">Home</li>
+			<li class="nav-item">News</li>
+			<li class="nav-item">Our Service</li>
+			<li class="nav-item">Contact Us</li>
+			<li class="nav-item">About</li>
+		</ul>
+	</nav>
+
+	<fieldset class="box">
+		<legend class="box-title"><small>My Test List</small></legend>
+			<ul class="test-list">
+				<li>Home</li>
+				<li>News</li>
+				<li>Our Service</li>
+				<li>Contact Us</li>
+				<li>About</li>
+			</ul>
+			
+	</fieldset>
+	
+
+</body>
+</html>

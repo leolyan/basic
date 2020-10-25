@@ -1,0 +1,49 @@
+<h1>Javascript Loop</h1>
+
+<p>Print Hello 3 times</p>
+<p> Fruits list</p>
+<ol>
+    
+</ol>
+
+<script>
+    // for in
+    let arr=["Apple","Orange","Mango","Banana","Grape"];
+
+    // for( i=0; i<arr.length; i++){
+    //     document.querySelector("ol").innerHTML += `<li>${arr[i]}</li>`;
+    // }
+    // for(x in arr){
+    //     document.querySelector("ol").innerHTML += `<li>${arr[x]}</li>`;
+
+    // }
+    //for of
+    // for(x of arr){
+    //     document.querySelector("ol").innerHTML += `<li>${x}</li>`;  
+    // }
+
+    // arr.map(function(el,index){
+    //     document.querySelector("ol").innerHTML += `<li>${el} - ${index}</li>`;
+    // });
+
+    let obj = {
+            //property
+            name: "Thang Muan Lian",
+            age: 20,
+            job: "Student",
+            sex: "Male",
+            status: "Single",
+    };
+    for(x in obj){
+        document.querySelector("ol").innerHTML+= `<li>${x} - ${obj[x]}</li>`;
+    }
+    
+
+    //for
+    function printHello(max){
+       for (i = 1; i <=max; i++) {
+            console.log(`${i}.Hello`)
+        };
+    }
+    
+</script>

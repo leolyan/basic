@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Form</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+	<link href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Sriracha&family=Stylish&family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+	<style type="text/css">
+		*{
+			font-family: 'Volkhov', serif;
+			color: #40514e;
+			box-sizing: border-box;
+		}
+		body{
+			/*background-image: repeating-linear-gradient(135deg, rgba(4, 229, 71,0.08) 0px, rgba(4, 229, 71,0.08) 1px,transparent 1px, transparent 9px),repeating-linear-gradient(45deg, rgba(4, 229, 71,0.08) 0px, rgba(4, 229, 71,0.08) 1px,transparent 1px, transparent 9px),linear-gradient(90deg, rgb(77, 18, 84),rgb(52, 161, 185));		*/
+			background-image: url(https://images8.alphacoders.com/393/thumb-1920-393966.jpg);
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+		}
+		.login-form{
+			width: 350px;
+			border: 2px solid #00000020;
+			padding: 30px 20px;
+			border-radius: 10px;
+			margin: 200px auto;
+			background-color: #00000070;
+		}
+		.login-form legend{
+			font-size: 1.2em;
+			text-transform: uppercase;
+			text-align: center;
+		}
+		.form-input{
+			margin-bottom: 20px;
+
+		}
+		.form-input label{
+			display: block;
+			margin-bottom: 8px;
+		}
+		.form-input input{
+			display: block;
+			width: 100%;
+			border-radius: 10px;
+			padding: 10px 15px;
+			border:  2px solid #00000070;
+			background-color: #fff4e3;
+		}
+		.btn{
+			border-radius: 10px;
+			padding: 10px 15px;
+			border:  2px solid #40514e;
+			background-color: #40514e;;
+			color: #fff4e3;
+			margin-right: 10px;
+		}
+
+		.text-light{
+			color: #fff4e3;
+		}
+
+		.reg-link{
+			color: #fff4e3ed;
+		}
+
+
+	</style>
+</head>
+<body>
+	<form>
+		<fieldset class="login-form">
+			<legend class="text-light">
+				<i class="fas fa-user-lock fa-fa text-light"></i>
+				User Login
+			</legend>
+
+			<div class="form-input">
+
+				<label class="text-light">
+					<i class="fas fa-user-alt fa-fw text-light"></i>User Name
+				</label>
+				<input type="text" name="" placeholder="Email address or phone number">
+
+			</div>
+
+			<div class="form-input">
+
+				<label class="text-light">
+					<i class="fas fa-key fa-fw text-light"></i>Password
+				</label>
+				<input type="password" name="" placeholder="Password">
+
+			</div>
+			<button class="btn">
+				<i class="fas fa-sign-in-alt text-light fa-fw"></i>&nbsp;Login
+			</button>
+
+			<a href="#"><small class="reg-link">Create new account</small> </a>
+
+		</fieldset>
+
+	</form>
+</body>
+</html>
